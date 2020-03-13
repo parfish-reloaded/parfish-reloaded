@@ -1,0 +1,20 @@
+.header {
+  background-color: #941e00;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+}
+
+.header__nav {
+  display: flex;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.header__nav__logo {
+  width: 200px;
+  padding-top: 7px;
+  padding-bottom: 10px;
+}
