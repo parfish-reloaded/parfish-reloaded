@@ -12,6 +12,24 @@
   align-items: center;
 }
 
+.signin-form__container__input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 85%;
+}
+
+.signin-form__container__input-container label:nth-child(2n + 1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.label-image {
+  margin-bottom: 30px;
+}
+
 .inputfile {
   width: 0.1px;
   height: 0.1px;
