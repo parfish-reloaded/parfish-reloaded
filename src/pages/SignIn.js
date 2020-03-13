@@ -2,6 +2,7 @@ import React from 'react';
 import './SignIn.css';
 import SignInImage from '../assets/signin.svg';
 import Input from '../components/Input';
+import Button from '../components/Button';
 
 function SignIn() {
   const [nickname, setNickname] = React.useState('');
@@ -73,7 +74,9 @@ function SignIn() {
             />
           </label>
         </div>
-        <button></button>
+        <Button className="signin-form__container__button">
+          CAST THE FISHING ROD!
+        </Button>
       </form>
     </>
   );
