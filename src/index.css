@@ -7,4 +7,10 @@
 body {
   margin: 0;
   font-size: 16px;
+  background-image: url('./assets/background_mobile.png');
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position-y: 160px;
+  background-attachment: fixed;
+  font-family: Roboto;
 }
