@@ -1,0 +1,26 @@
+.footer__nav {
+  display: flex;
+  justify-content: space-evenly;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: #941e00;
+}
+
+.footer__nav__button {
+  height: 50px;
+  width: 50px;
+  background-color: #941e00;
+  border: none;
+}
+
+/* .footer__nav__button--active {
+    background-color: #681500;
+    border: none;
+  } */
+
+.footer__nav__button__img {
+  width: 100%;
+  border: none;
+}
