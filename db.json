@@ -1,1 +1,11 @@
-{}
+{
+  "users": [
+    {
+      "nickname": "FLori73",
+      "yearOfBirth": "1999",
+      "sex": "gerne",
+      "distance": "von hier bis zum Mond",
+      "id": 1
+    }
+  ]
+}

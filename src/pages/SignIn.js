@@ -10,8 +10,25 @@ function SignIn() {
   const [sex, setSex] = React.useState('');
   const [distance, setDistance] = React.useState('');
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+
+    const users = {
+      nickname: nickname,
+      yearOfBirth: yearOfBirth,
+      sex: sex,
+      distance: distance
+    };
+
+    const response = await fetch('http://localhost:4000/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(users)
+    });
+    const createdUser = await response.json();
+    alert(`Created poll with the id ${createdUser.id}`);
 
     console.log(nickname);
     console.log(yearOfBirth);
