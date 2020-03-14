@@ -20,13 +20,17 @@ function SignIn() {
       distance: distance
     };
 
-    const response = await fetch('http://localhost:4000/users', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(users)
-    });
+    const response = await fetch(
+      process.env.REACT_APP_USERS_API ||
+        'https://my-json-server.typicode.com/parfish-reloaded/parfish-reloaded/users',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(users)
+      }
+    );
     const createdUser = await response.json();
     alert(`Created poll with the id ${createdUser.id}`);
 
