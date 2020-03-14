@@ -10,8 +10,29 @@ function SignIn() {
   const [sex, setSex] = React.useState('');
   const [distance, setDistance] = React.useState('');
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+
+    const users = {
+      nickname: nickname,
+      yearOfBirth: yearOfBirth,
+      sex: sex,
+      distance: distance
+    };
+
+    const response = await fetch(
+      process.env.REACT_APP_USERS_API ||
+        'https://my-json-server.typicode.com/parfish-reloaded/parfish-reloaded/users',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(users)
+      }
+    );
+    const createdUser = await response.json();
+    alert(`Created poll with the id ${createdUser.id}`);
 
     console.log(nickname);
     console.log(yearOfBirth);
