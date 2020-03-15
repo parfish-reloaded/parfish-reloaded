@@ -51,9 +51,13 @@
 }
 
 .profile__main__img {
-  width: 140px;
+  width: 100%;
   border: solid rgba(148, 30, 0) 4px;
   border-radius: 7px;
+}
+
+.imageWrapper {
+  width: 140px;
 }
 
 .profile__main__dates__strings {

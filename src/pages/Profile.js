@@ -20,15 +20,23 @@ function Profile() {
     getUser();
   }, [userId]);
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
       {/* <h2 className="test">{user?.nickname}</h2>
-      <div className="test">{user?.yearOfBirth}</div>
+      <div className="test"></div>
       <div className="test">{user?.sex}</div>
       <div className="test">{user?.distance}</div> */}
 
       <section className="profile__main__dates">
-        <img src={Woman} alt="Young woman" className="profile__main__img"></img>
+        <div className="imageWrapper">
+          <img
+            src={Woman}
+            alt="Young woman"
+            className="profile__main__img"
+          ></img>
+        </div>
         <div className="profile__main__dates__strings">
           <p className="profile__main__dates__strings__description">
             Profilname
@@ -38,7 +46,7 @@ function Profile() {
           </p>
           <p className="profile__main__dates__strings__description">Alter</p>
           <p className="profile__main__dates__strings__input">
-            {2020 - user?.yearOfBirth}
+            {currentYear - user?.yearOfBirth}
           </p>
           <p className="profile__main__dates__strings__description">
             Geschlecht
