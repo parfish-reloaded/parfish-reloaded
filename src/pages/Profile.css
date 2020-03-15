@@ -19,6 +19,10 @@
   margin-right: 20px;
 }
 
+.profile__main__dates__strings__description {
+  color: rgba(148, 30, 0);
+}
+
 .profile__main__dates__strings__input {
   color: #f0f0f0;
   background-color: rgba(148, 30, 0);
