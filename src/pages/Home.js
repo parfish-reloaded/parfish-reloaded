@@ -5,16 +5,43 @@ import Button from '../components/Button';
 
 function Home(props) {
   const [email, setEmail] = React.useState('');
+  const [emailCheck, setEmailCheck] = React.useState(true);
   const [password, setPassword] = React.useState('');
+  const [buttonClassName, setButtonClassName] = React.useState(
+    'register-form__button'
+  );
+
+  const checkEmail = event => {
+    setEmail(event.target.value);
+    setEmailCheck(event.target.validity.typeMismatch);
+    changeButtonStyle(
+      event.target.value,
+      event.target.validity.typeMismatch,
+      password
+    );
+  };
+
+  const checkPassword = event => {
+    setPassword(event.target.value);
+    changeButtonStyle(email, emailCheck, event.target.value);
+  };
+
+  function changeButtonStyle(userEmail, emailCheck, userPassword) {
+    if (
+      userEmail.trim() === '' ||
+      emailCheck ||
+      userPassword.trim().length < 4
+    ) {
+      setButtonClassName('register-form__button');
+    } else {
+      setButtonClassName('register-form__button-active');
+    }
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
     sessionStorage.setItem('email', email);
     sessionStorage.setItem('password', password);
-    console.log(
-      'Email: ' + sessionStorage.email,
-      'Passwort: ' + sessionStorage.password
-    );
   }
   return (
     <>
@@ -29,7 +56,7 @@ function Home(props) {
           value={email}
           placeholder="Email"
           onChange={event => {
-            setEmail(event.target.value);
+            checkEmail(event);
           }}
         />
         <Input
@@ -39,10 +66,10 @@ function Home(props) {
           value={password}
           placeholder="Passwort"
           onChange={event => {
-            setPassword(event.target.value);
+            checkPassword(event);
           }}
         />
-        <Button className="register-form__button">Let's Go Fishing!</Button>
+        <Button className={buttonClassName}>Let's Go Fishing!</Button>
       </form>
     </>
   );

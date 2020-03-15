@@ -1,7 +1,6 @@
-.signin-form__container__button,
-.register-form__button {
+.signin-form__container__button {
   width: 240px;
-  background-color: #ff5c07;
+  background-color: #c1c1c1;
   border: none;
   border-radius: 0.5rem;
   color: #f0f0f0;
@@ -18,8 +17,7 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.signin-form__container__button:active,
-.register-form__button:active {
+.signin-form__container__button:active {
   box-shadow: none;
   outline: none;
   background-color: #ff3400;

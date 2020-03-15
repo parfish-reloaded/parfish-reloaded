@@ -46,7 +46,8 @@ Grid
   padding-right: 50px;
   padding-bottom: 150px;
 }
-.register-form__button {
+.register-form__button,
+.register-form__button-active {
   grid-column: 1 / 3;
   grid-row: 3 / 3;
   justify-self: right;
@@ -76,6 +77,41 @@ input[type='password']:focus {
 input[type='password'] {
   margin-bottom: 140px;
 }
+
 .register-form__button {
-  background-color: #c1c1c1 !important;
+  width: 240px;
+  background-color: #c1c1c1;
+  border: none;
+  border-radius: 0.5rem;
+  color: #f0f0f0;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 18px 28px 75px 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.register-form__button-active {
+  background-color: #ff5c07;
+  width: 240px;
+  border: none;
+  border-radius: 0.5rem;
+  color: #f0f0f0;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 18px 28px 75px 10px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
