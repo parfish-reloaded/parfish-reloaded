@@ -7,7 +7,15 @@ function Home(props) {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  function handleSubmit() {}
+  function handleSubmit(event) {
+    event.preventDefault();
+    sessionStorage.setItem('email', email);
+    sessionStorage.setItem('password', password);
+    console.log(
+      'Email: ' + sessionStorage.email,
+      'Passwort: ' + sessionStorage.password
+    );
+  }
   return (
     <>
       <h1 className="main__h1 main__h1__b">
