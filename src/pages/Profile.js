@@ -19,7 +19,6 @@ function Profile() {
     }
     getUser();
   }, [userId]);
-  console.log(user?.nickname);
 
   return (
     <>
