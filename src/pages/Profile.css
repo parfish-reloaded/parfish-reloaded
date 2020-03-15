@@ -1,49 +1,3 @@
-.header__nav__dropdown {
-  position: absolute;
-  right: 4px;
-  color: #f0f0f0;
-  padding-top: 10px;
-}
-
-.header__nav__dropdown a {
-  text-decoration: none;
-  color: #f0f0f0;
-}
-
-.profile__nav__header__ul {
-  position: absolute;
-  right: -4px;
-  list-style: none;
-  margin-top: 2px;
-  padding: 12px 12px 0px 12px;
-  width: 120px;
-  background-color: #941e00;
-  border-radius: 0 0 7px 7px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-10px);
-  transition: all 0.4s ease;
-}
-
-.profile__nav__header__li {
-  padding-bottom: 10px;
-}
-
-.profile__header__nav__button {
-  background-color: #941e00;
-  border: none;
-}
-
-.header__nav__button__icon {
-  width: 30px;
-}
-
-.header__nav__dropdown button:focus + ul {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateY(0px);
-}
-
 .profile__main__dates {
   display: flex;
   margin-top: 100px;
@@ -57,11 +11,11 @@
 }
 
 .imageWrapper {
-  width: 140px;
+  width: 161px;
 }
 
 .profile__main__dates__strings {
-  margin-left: 10px;
+  margin-left: 20px;
   margin-right: 20px;
 }
 
@@ -72,90 +26,13 @@
   margin-bottom: 10px;
   padding: 6px;
   border-radius: 7px;
+  min-width: 120px;
   max-width: 205px;
+  max-height: 31px;
   overflow: scroll;
 }
 
 p {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-.profile__main__dates__strings__description {
-  color: #941e00;
-}
-
-.profile__main__bio {
-  margin-top: 40px;
-  margin-left: 20px;
-  padding: 10px 10px 10px 10px;
-  color: #f0f0f0;
-  background-color: rgba(148, 30, 0, 0.7);
-  margin-right: 20px;
-  border-radius: 7px;
-}
-
-.profile__main__search__description {
-  color: #941e00;
-}
-
-.profile__main__search__input {
-  color: #f0f0f0;
-  background-color: rgba(148, 30, 0, 0.7);
-  border-radius: 7px;
-  padding: 6px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  width: 150px;
-}
-
-.profile__main__search {
-  margin-top: 40px;
-  margin-bottom: 70px;
-}
-
-.profile__main__search__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-}
-
-.profile__main__search__go-fishing button {
-  width: 150px;
-  background-color: #941e00;
-  border: none;
-  border-radius: 7px;
-  color: #f0f0f0;
-  padding: 12px 6px 12px 6px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-top: 13px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.profile__main__search__go-fishing button:active {
-  box-shadow: none;
-  outline: none;
-  background-color: #941e00;
-  color: #f0f0f0;
-}
-
-.profile__main__search__link {
-  color: #f0f0f0;
-  text-decoration: none;
-  outline: none;
-}
-
-.profile__main__search__button__img {
-  width: 25px;
-  margin: 0;
-  border: none;
 }
