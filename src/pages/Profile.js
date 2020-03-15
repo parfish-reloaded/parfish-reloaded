@@ -38,7 +38,7 @@ function Profile() {
           </p>
           <p className="profile__main__dates__strings__description">Alter</p>
           <p className="profile__main__dates__strings__input">
-            {user?.yearOfBirth}
+            {2020 - user?.yearOfBirth}
           </p>
           <p className="profile__main__dates__strings__description">
             Geschlecht
