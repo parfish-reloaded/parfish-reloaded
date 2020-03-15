@@ -1,14 +1,26 @@
 import React from 'react';
 import './Header.css';
 import Logo from '../assets/logo-parfish.png';
+import LoginButton from './LoginButton';
 
-function Header(props) {
+console.log(window.location.pathname);
+
+function LoginButtonOrMenu() {
+  const path = window.location.pathname;
+  if (path === '/' || path === '/signin') {
+    return <LoginButton className="header__nav__button" />;
+  } else {
+    return null;
+  }
+}
+
+function Header() {
   return (
     <>
       <header className="header">
         <nav className="header__nav">
           <img className="header__nav__logo" src={Logo} alt="Parfish Logo" />
-          <div></div>
+          <LoginButtonOrMenu />
         </nav>
       </header>
     </>
