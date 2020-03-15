@@ -10,6 +10,7 @@ function Home(props) {
   const [buttonClassName, setButtonClassName] = React.useState(
     'register-form__button'
   );
+  const [disabledButton, setDisabledButton] = React.useState(true);
 
   const checkEmail = event => {
     setEmail(event.target.value);
@@ -33,8 +34,10 @@ function Home(props) {
       userPassword.trim().length < 4
     ) {
       setButtonClassName('register-form__button');
+      setDisabledButton(true);
     } else {
       setButtonClassName('register-form__button-active');
+      setDisabledButton(false);
     }
   }
 
@@ -69,7 +72,9 @@ function Home(props) {
             checkPassword(event);
           }}
         />
-        <Button className={buttonClassName}>Let's Go Fishing!</Button>
+        <Button className={buttonClassName} disabled={disabledButton}>
+          Let's Go Fishing!
+        </Button>
       </form>
     </>
   );
