@@ -91,7 +91,7 @@ function Home(props) {
           }}
         />
         <SubmitButton bg={backgroundButton} disabled={disabledButton}>
-          Let's Go Fishing!
+          {props.showLogin ? `Let's Go Fishing!` : `Login`}
         </SubmitButton>
       </StartForm>
     </>
