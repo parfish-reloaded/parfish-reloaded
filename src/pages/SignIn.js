@@ -2,7 +2,7 @@ import React from 'react';
 import './SignIn.css';
 import SignInImage from '../assets/signin.svg';
 import Input from '../components/Input';
-import Button from '../components/Button';
+import SubmitButton from '../components/SubmitButton';
 
 function SignIn() {
   const [nickname, setNickname] = React.useState('');
@@ -95,9 +95,9 @@ function SignIn() {
             />
           </label>
         </div>
-        <Button className="signin-form__container__button">
+        <SubmitButton className="signin-form__container__button">
           CAST THE FISHING ROD!
-        </Button>
+        </SubmitButton>
       </form>
     </>
   );
