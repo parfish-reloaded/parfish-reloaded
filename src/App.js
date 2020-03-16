@@ -9,14 +9,16 @@ import Profile from './pages/Profile';
 import Swarm from './pages/Swarm';
 
 function App() {
+  const [showLogin, setShowLogin] = React.useState(true);
+
   return (
     <>
       <Router>
-        <Header />
+        <Header onLoginButtonClick={() => setShowLogin(!showLogin)} />
         <main>
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home showLogin={showLogin} />
             </Route>
             <Route path="/signin">
               <SignIn />

@@ -13,13 +13,11 @@ function Home(props) {
   const [disabledButton, setDisabledButton] = React.useState(true);
 
   const checkEmail = event => {
-    setEmail(event.target.value);
+    const newEmail = event.target.value;
+    setEmail(newEmail);
+
     setEmailCheck(event.target.validity.typeMismatch);
-    changeButtonStyle(
-      event.target.value,
-      event.target.validity.typeMismatch,
-      password
-    );
+    changeButtonStyle(newEmail, event.target.validity.typeMismatch, password);
   };
 
   const checkPassword = event => {
@@ -73,7 +71,7 @@ function Home(props) {
           }}
         />
         <Button className={buttonClassName} disabled={disabledButton}>
-          Let's Go Fishing!
+          {props.showLogin ? 'Login' : "Let's Go Fishing!"}
         </Button>
       </form>
     </>

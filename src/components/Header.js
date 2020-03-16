@@ -5,22 +5,27 @@ import LoginButton from './LoginButton';
 
 console.log(window.location.pathname);
 
-function LoginButtonOrMenu() {
+function LoginButtonOrMenu(props) {
   const path = window.location.pathname;
   if (path === '/' || path === '/signin') {
-    return <LoginButton className="header__nav__button" />;
+    return (
+      <LoginButton
+        className="header__nav__button"
+        onClick={props.onLoginButtonClick}
+      />
+    );
   } else {
     return null;
   }
 }
 
-function Header() {
+function Header(props) {
   return (
     <>
       <header className="header">
         <nav className="header__nav">
           <img className="header__nav__logo" src={Logo} alt="Parfish Logo" />
-          <LoginButtonOrMenu />
+          <LoginButtonOrMenu onLoginButtonClick={props.onLoginButtonClick} />
         </nav>
       </header>
     </>

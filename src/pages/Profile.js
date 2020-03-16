@@ -22,6 +22,10 @@ function Profile() {
 
   const currentYear = new Date().getFullYear();
 
+  if (!user) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       {/* <h2 className="test">{user?.nickname}</h2>
@@ -42,7 +46,7 @@ function Profile() {
             Profilname
           </p>
           <p className="profile__main__dates__strings__input">
-            {user?.nickname}
+            {user.nickname}
           </p>
           <p className="profile__main__dates__strings__description">Alter</p>
           <p className="profile__main__dates__strings__input">
@@ -51,12 +55,12 @@ function Profile() {
           <p className="profile__main__dates__strings__description">
             Geschlecht
           </p>
-          <p className="profile__main__dates__strings__input">{user?.sex}</p>
+          <p className="profile__main__dates__strings__input">{user.sex}</p>
           <p className="profile__main__dates__strings__description">
             Angellänge
           </p>{' '}
           <p className="profile__main__dates__strings__input">
-            {user?.distance}
+            {user.distance}
           </p>
         </div>
       </section>
