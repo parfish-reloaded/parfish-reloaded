@@ -8,9 +8,48 @@ body {
   margin: 0;
   font-size: 16px;
   background-image: url('./assets/background_mobile.png');
-  background-size: 400px;
+  background-size: 450px;
   background-repeat: no-repeat;
   background-position-y: 160px;
   background-attachment: fixed;
   font-family: Roboto;
+}
+
+@media only screen and (min-device-width: 450px) {
+  body {
+    margin: 0;
+    font-size: 16px;
+    background-image: url('./assets/background_desktop.png');
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-attachment: fixed;
+    font-family: Roboto;
+  }
+}
+
+@media only screen and (min-device-width: 900px) {
+  body {
+    margin: 0;
+    font-size: 16px;
+    background-image: url('./assets/background_desktop.png');
+    background-size: 1100px;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-attachment: fixed;
+    font-family: Roboto;
+  }
+}
+
+@media only screen and (min-device-width: 1100px) {
+  body {
+    margin: 0;
+    font-size: 16px;
+    background-image: url('./assets/background_desktop.png');
+    background-size: 1920px;
+    background-repeat: no-repeat;
+    background-position-y: -30px;
+    background-attachment: fixed;
+    font-family: Roboto;
+  }
 }
