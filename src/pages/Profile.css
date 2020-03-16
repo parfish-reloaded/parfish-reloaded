@@ -1,0 +1,42 @@
+.profile__main__dates {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+
+.profile__main__img {
+  width: 100%;
+  border: solid rgba(148, 30, 0) 4px;
+  border-radius: 7px;
+}
+
+.imageWrapper {
+  width: 161px;
+}
+
+.profile__main__dates__strings {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.profile__main__dates__strings__description {
+  color: rgba(148, 30, 0);
+}
+
+.profile__main__dates__strings__input {
+  color: #f0f0f0;
+  background-color: rgba(148, 30, 0);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 6px;
+  border-radius: 7px;
+  min-width: 120px;
+  max-width: 205px;
+  max-height: 31px;
+  overflow: scroll;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}

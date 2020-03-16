@@ -4,8 +4,22 @@
       "nickname": "FLori73",
       "yearOfBirth": "1999",
       "sex": "gerne",
-      "distance": "von hier bis zum Mond",
+      "distance": "bis zum Mond",
       "id": 1
+    },
+    {
+      "nickname": "Uwinator3000",
+      "yearOfBirth": "1991",
+      "sex": "m",
+      "distance": "<------------------------>",
+      "id": 2
+    },
+    {
+      "nickname": "Test",
+      "yearOfBirth": "123",
+      "sex": "divers",
+      "distance": "lang",
+      "id": 3
     }
   ]
 }

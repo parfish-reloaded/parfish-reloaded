@@ -21,7 +21,7 @@ function App() {
             <Route path="/signin">
               <SignIn />
             </Route>
-            <Route path="/profile">
+            <Route path="/profile/:userId">
               <Profile />
             </Route>
             <Route path="/swarm">
