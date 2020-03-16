@@ -1,8 +1,12 @@
 import React from 'react';
 import './Input.css';
 
-function Input(props) {
-  return <input {...props} />;
+function Input({ labelClassName, ...inputProps }) {
+  return (
+    <label className={labelClassName}>
+      <input {...inputProps} />
+    </label>
+  );
 }
 
 export default Input;

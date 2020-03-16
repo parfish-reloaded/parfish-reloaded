@@ -3,7 +3,7 @@ import './Home.css';
 import Input from '../components/Input';
 import Button from '../components/Button';
 
-function Home(props) {
+function Home({ showLogin }) {
   const [email, setEmail] = React.useState('');
   const [emailCheck, setEmailCheck] = React.useState(true);
   const [password, setPassword] = React.useState('');
@@ -71,7 +71,7 @@ function Home(props) {
           }}
         />
         <Button className={buttonClassName} disabled={disabledButton}>
-          {props.showLogin ? 'Login' : "Let's Go Fishing!"}
+          {showLogin ? 'Login' : "Let's Go Fishing!"}
         </Button>
       </form>
     </>

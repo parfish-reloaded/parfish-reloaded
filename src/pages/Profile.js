@@ -35,11 +35,7 @@ function Profile() {
 
       <section className="profile__main__dates">
         <div className="imageWrapper">
-          <img
-            src={Woman}
-            alt="Young woman"
-            className="profile__main__img"
-          ></img>
+          <img src={Woman} alt="Young woman" className="profile__main__img" />
         </div>
         <div className="profile__main__dates__strings">
           <p className="profile__main__dates__strings__description">
