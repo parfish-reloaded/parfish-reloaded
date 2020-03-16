@@ -1,11 +1,22 @@
+footer {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  background-color: #941e00;
+  height: 50px;
+  width: 100%;
+  bottom: 0;
+}
+
 .footer__nav {
   display: flex;
   justify-content: space-evenly;
-  left: 0;
-  right: 0;
+
   bottom: 0;
   position: fixed;
   background-color: #941e00;
+  max-width: 550px;
+  width: 85%;
 }
 
 .footer__nav__button {
