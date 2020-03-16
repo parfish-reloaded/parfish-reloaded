@@ -4,16 +4,15 @@ import Woman from '../assets/woman-profile-picture.jpg';
 
 const Section = styled.section`
   display: flex;
-  margin-top: 100px;
-  margin-left: 20px;
-`;
-
-const ImageWrapper = styled.div`
-  width: 161px;
+  justify-content: center;
+  margin: 100px auto;
+  width: 85%;
+  height: 260px;
 `;
 
 const Img = styled.img`
-  width: 100%;
+  height: 250px;
+  margin-left: 15px;
   border: solid rgba(148, 30, 0) 4px;
   border-radius: 7px;
 `;
@@ -23,8 +22,10 @@ function ProfileImg(props) {
 }
 
 const MainDates = styled.div`
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  height: 260px;
 `;
 
 const MainDatesDescription = styled.p`
@@ -40,19 +41,17 @@ const ProfileInput = styled.p`
   margin-bottom: 10px;
   padding: 6px;
   border-radius: 7px;
-  min-width: 120px;
+  min-width: 100px;
   max-width: 205px;
   max-height: 31px;
-  overflow: scroll;
+  overflow-x: scroll;
 `;
 
 const currentYear = new Date().getFullYear();
 function ProfileSection(props) {
   return (
     <Section>
-      <ImageWrapper>
-        <ProfileImg />
-      </ImageWrapper>
+      <ProfileImg />
       <MainDates>
         <MainDatesDescription>Profilname</MainDatesDescription>
         <ProfileInput>{props.user?.nickname}</ProfileInput>{' '}
