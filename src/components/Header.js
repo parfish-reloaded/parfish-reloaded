@@ -2,13 +2,13 @@ import React from 'react';
 import './Header.css';
 import Logo from '../assets/logo-parfish.png';
 import LoginButton from './LoginButton';
-
+import { teste } from '../App';
 console.log(window.location.pathname);
 
 function LoginButtonOrMenu() {
   const path = window.location.pathname;
   if (path === '/' || path === '/signin') {
-    return <LoginButton className="header__nav__button" />;
+    return <LoginButton onClick={teste()} className="header__nav__button" />;
   } else {
     return null;
   }
