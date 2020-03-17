@@ -2,7 +2,23 @@ import React from 'react';
 import './SignIn.css';
 import SignInImage from '../assets/signin.svg';
 import Input from '../components/Input';
-import SubmitButton from '../components/SubmitButton';
+import Button from '../components/Button';
+import Form from '../components/Form';
+import styled from '@emotion/styled';
+
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 85%;
+  max-width: 400px;
+  & label:nth-child(2n + 1) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+`;
 
 function SignIn() {
   const [nickname, setNickname] = React.useState('');
@@ -43,7 +59,7 @@ function SignIn() {
   return (
     <>
       <h1 className="main__h1">Sign In</h1>
-      <form className="signin-form__container" onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <input type="file" className="inputfile inputfile-4" />
         <label className="label-image">
           <figure>
@@ -52,53 +68,44 @@ function SignIn() {
 
           <span>Lade ein Bild von Dir hoch!</span>
         </label>
-        <div className="signin-form__container__input-container">
-          <label className="signin-form__container__input-label">
-            <Input
-              className="input"
-              placeholder="Nickname"
-              value={nickname}
-              onChange={event => {
-                setNickname(event.target.value);
-              }}
-            />
-          </label>
-          <label className="signin-form__container__input-label">
-            <Input
-              type="number"
-              className="input"
-              placeholder="Wähle dein Geburtsjahr"
-              value={yearOfBirth}
-              onChange={event => {
-                setYearOfBirth(event.target.value);
-              }}
-            />
-          </label>
-          <label className="signin-form__container__input-label">
-            <Input
-              className="input"
-              placeholder="Wähle dein Geschlecht"
-              value={sex}
-              onChange={event => {
-                setSex(event.target.value);
-              }}
-            />
-          </label>
-          <label className="signin-form__container__input-label">
-            <Input
-              className="input"
-              placeholder="Wie lang ist deine Angel?"
-              value={distance}
-              onChange={event => {
-                setDistance(event.target.value);
-              }}
-            />
-          </label>
-        </div>
-        <SubmitButton className="signin-form__container__button">
+        <InputContainer>
+          <Input
+            placeholder="Nickname"
+            value={nickname}
+            onChange={event => {
+              setNickname(event.target.value);
+            }}
+          />
+
+          <Input
+            type="number"
+            placeholder="Wähle dein Geburtsjahr"
+            value={yearOfBirth}
+            onChange={event => {
+              setYearOfBirth(event.target.value);
+            }}
+          />
+
+          <Input
+            placeholder="Wähle dein Geschlecht"
+            value={sex}
+            onChange={event => {
+              setSex(event.target.value);
+            }}
+          />
+
+          <Input
+            placeholder="Wie lang ist deine Angel?"
+            value={distance}
+            onChange={event => {
+              setDistance(event.target.value);
+            }}
+          />
+        </InputContainer>
+        <Button className="signin-form__container__button">
           CAST THE FISHING ROD!
-        </SubmitButton>
-      </form>
+        </Button>
+      </Form>
     </>
   );
 }
