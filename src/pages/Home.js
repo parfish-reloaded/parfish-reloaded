@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import SubmitButton from '../components/SubmitButton';
 import Headline from '../components/Headline';
 import HomeInput from '../components/HomeInput';
@@ -60,11 +61,12 @@ function Home(props) {
       setDisabledButton(false);
     }
   }
-
+  let history = useHistory();
   function handleSubmit(event) {
     event.preventDefault();
     sessionStorage.setItem('email', email);
     sessionStorage.setItem('password', password);
+    history.push('/signin');
   }
 
   return (

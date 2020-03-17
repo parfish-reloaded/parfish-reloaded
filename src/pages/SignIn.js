@@ -3,6 +3,7 @@ import './SignIn.css';
 import SignInImage from '../assets/signin.svg';
 import Input from '../components/Input';
 import SubmitButton from '../components/SubmitButton';
+import { useHistory } from 'react-router-dom';
 
 function SignIn() {
   const [nickname, setNickname] = React.useState('');
@@ -10,10 +11,14 @@ function SignIn() {
   const [sex, setSex] = React.useState('');
   const [distance, setDistance] = React.useState('');
 
+  const history = useHistory();
+
   async function handleSubmit(event) {
     event.preventDefault();
 
     const users = {
+      password: sessionStorage.getItem('password'),
+      email: sessionStorage.getItem('email'),
       nickname: nickname,
       yearOfBirth: yearOfBirth,
       sex: sex,
@@ -32,20 +37,16 @@ function SignIn() {
       }
     );
     const createdUser = await response.json();
-    alert(`Created poll with the id ${createdUser.id}`);
-
-    console.log(nickname);
-    console.log(yearOfBirth);
-    console.log(sex);
-    console.log(distance);
+    history.push('/profile/' + createdUser.id);
   }
 
   return (
     <>
       <h1 className="main__h1">Sign In</h1>
       <form className="signin-form__container" onSubmit={handleSubmit}>
-        <input type="file" className="inputfile inputfile-4" />
         <label className="label-image">
+          <input type="file" className="inputfile inputfile-4" />
+
           <figure>
             <img src={SignInImage} alt="Sign-In logo"></img>
           </figure>
