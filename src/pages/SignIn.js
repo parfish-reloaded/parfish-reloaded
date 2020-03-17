@@ -1,9 +1,11 @@
 import React from 'react';
-import './SignIn.css';
 import SignInImage from '../assets/signin.svg';
 import Input from '../components/Input';
-import Button from '../components/Button';
+import SubmitButton from '../components/SubmitButton';
 import Form from '../components/Form';
+import FileInput from '../components/FileInput';
+import FileFigure from '../components/FileFigure';
+import FileLabel from '../components/FileLabel';
 import styled from '@emotion/styled';
 
 const InputContainer = styled.div`
@@ -60,14 +62,13 @@ function SignIn() {
     <>
       <h1 className="main__h1">Sign In</h1>
       <Form onSubmit={handleSubmit}>
-        <input type="file" className="inputfile inputfile-4" />
-        <label className="label-image">
-          <figure>
-            <img src={SignInImage} alt="Sign-In logo"></img>
-          </figure>
-
+        <FileLabel>
+          <FileInput type="file" />
+          <FileFigure>
+            <img src={SignInImage} alt="Sign-In logo" />
+          </FileFigure>
           <span>Lade ein Bild von Dir hoch!</span>
-        </label>
+        </FileLabel>
         <InputContainer>
           <Input
             placeholder="Nickname"
@@ -102,9 +103,7 @@ function SignIn() {
             }}
           />
         </InputContainer>
-        <Button className="signin-form__container__button">
-          CAST THE FISHING ROD!
-        </Button>
+        <SubmitButton>CAST THE FISHING ROD!</SubmitButton>
       </Form>
     </>
   );
