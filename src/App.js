@@ -8,9 +8,8 @@ import SignIn from './pages/SignIn';
 import Profile from './pages/Profile';
 import Swarm from './pages/Swarm';
 
-export const teste = () => console.log('oops');
 function App() {
-  const [showLogin, setShowLogin] = React.useState(true);
+  const [showLogin, setShowLogin] = React.useState(false);
   return (
     <>
       <Router>
