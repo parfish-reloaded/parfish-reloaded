@@ -13,7 +13,7 @@ function Profile() {
 
   React.useEffect(() => {
     async function getUser() {
-      const response = await fetch(`${USERS_API_URL}${userId}`);
+      const response = await fetch(`${USERS_API_URL}/${userId}`);
       const user = await response.json();
       console.log(user);
       setUser(user);
