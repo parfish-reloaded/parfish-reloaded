@@ -19,22 +19,22 @@ const ParfishHeaderNav = styled.nav`
   max-width: 960px;
 `;
 
-function LoginButtonOrMenu() {
+function LoginButtonOrMenu(props) {
   const path = window.location.pathname;
   if (path === '/' || path === '/signin') {
-    return <LoginButton onClick={() => console.log('test')}>Login</LoginButton>;
+    return <LoginButton onClick={props.onLoginButtonClick}>Login</LoginButton>;
   } else {
     return null;
   }
 }
 
-function Header() {
+function Header(props) {
   return (
     <>
       <ParfishHeader>
         <ParfishHeaderNav>
           <LogoImage src={Logo} alt="Parfish Logo" />
-          <LoginButtonOrMenu />
+          <LoginButtonOrMenu onLoginButtonClick={props.onLoginButtonClick} />
         </ParfishHeaderNav>
       </ParfishHeader>
     </>
