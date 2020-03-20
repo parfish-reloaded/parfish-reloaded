@@ -4,6 +4,11 @@ import Headline from '../components/Headline';
 import HomeInput from '../components/HomeInput';
 import styled from '@emotion/styled';
 
+const HomeSection = styled.section`
+  margin: 100px auto;
+  max-width: 450px;
+`;
+
 const StartForm = styled.form`
   display: grid;
   grid-template-columns: 50% 50%;
@@ -69,31 +74,33 @@ function Home(props) {
 
   return (
     <>
-      <Headline>Jeder Fisch braucht seinen Schwarm</Headline>
-      <StartForm onSubmit={handleSubmit}>
-        <EmailInput
-          type="email"
-          autoFocus
-          required
-          value={email}
-          placeholder="Email"
-          onChange={event => {
-            checkEmail(event);
-          }}
-        />
-        <PasswordInput
-          type="password"
-          required
-          value={password}
-          placeholder="Passwort"
-          onChange={event => {
-            checkPassword(event);
-          }}
-        />
-        <SubmitButton bg={backgroundButton} disabled={disabledButton}>
-          {props.showLogin ? `Let's Go Fishing!` : `Login`}
-        </SubmitButton>
-      </StartForm>
+      <HomeSection>
+        <Headline>Jeder Fisch braucht seinen Schwarm</Headline>
+        <StartForm onSubmit={handleSubmit}>
+          <EmailInput
+            type="email"
+            autoFocus
+            required
+            value={email}
+            placeholder="Email"
+            onChange={event => {
+              checkEmail(event);
+            }}
+          />
+          <PasswordInput
+            type="password"
+            required
+            value={password}
+            placeholder="Passwort"
+            onChange={event => {
+              checkPassword(event);
+            }}
+          />
+          <SubmitButton bg={backgroundButton} disabled={disabledButton}>
+            {props.showLogin ? `Let's Go Fishing!` : `Login`}
+          </SubmitButton>
+        </StartForm>
+      </HomeSection>
     </>
   );
 }
