@@ -6,12 +6,16 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   margin: 100px auto;
-  width: 85%;
-  height: 260px;
+  max-width: 450px;
+  max-height: 260px;
+`;
+
+const ImgWrapper = styled.div`
+  max-height: 260px;
 `;
 
 const Img = styled.img`
-  height: 250px;
+  height: 100%;
   margin-left: 15px;
   border: solid rgba(148, 30, 0) 4px;
   border-radius: 7px;
@@ -51,7 +55,9 @@ const currentYear = new Date().getFullYear();
 function ProfileSection(props) {
   return (
     <Section>
-      <ProfileImg />
+      <ImgWrapper>
+        <ProfileImg />
+      </ImgWrapper>
       <MainDates>
         <MainDatesDescription>Profilname</MainDatesDescription>
         <ProfileInput>{props.user?.nickname}</ProfileInput>{' '}
