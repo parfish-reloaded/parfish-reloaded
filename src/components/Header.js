@@ -1,28 +1,42 @@
 import React from 'react';
-import './Header.css';
 import Logo from '../assets/logo-parfish.png';
 import LoginButton from './LoginButton';
+import LogoImage from './LogoImage';
+import styled from '@emotion/styled';
 
-console.log(window.location.pathname);
+const ParfishHeader = styled.header`
+  background-color: #941e00;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: fixed;
+`;
 
-function LoginButtonOrMenu() {
+const ParfishHeaderNav = styled.nav`
+  display: flex;
+  margin: 0 auto;
+  max-width: 960px;
+`;
+
+function LoginButtonOrMenu(props) {
   const path = window.location.pathname;
   if (path === '/' || path === '/signin') {
-    return <LoginButton className="header__nav__button" />;
+    return <LoginButton onClick={props.onLoginButtonClick}>Login</LoginButton>;
   } else {
     return null;
   }
 }
 
-function Header() {
+function Header(props) {
   return (
     <>
-      <header className="header">
-        <nav className="header__nav">
-          <img className="header__nav__logo" src={Logo} alt="Parfish Logo" />
-          <LoginButtonOrMenu />
-        </nav>
-      </header>
+      <ParfishHeader>
+        <ParfishHeaderNav>
+          <LogoImage src={Logo} alt="Parfish Logo" />
+          <LoginButtonOrMenu onLoginButtonClick={props.onLoginButtonClick} />
+        </ParfishHeaderNav>
+      </ParfishHeader>
     </>
   );
 }

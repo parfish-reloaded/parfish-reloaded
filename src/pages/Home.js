@@ -1,15 +1,35 @@
 import React from 'react';
-import './Home.css';
-import Input from '../components/Input';
-import Button from '../components/Button';
+import SubmitButton from '../components/SubmitButton';
+import Headline from '../components/Headline';
+import HomeInput from '../components/HomeInput';
+import styled from '@emotion/styled';
+
+const StartForm = styled.form`
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto auto;
+  margin-top: 40px;
+  padding-top: 0;
+`;
+
+const EmailInput = styled(HomeInput)`
+  grid-column: 1 / 3;
+  grid-row: 1 / 1;
+  justify-self: left;
+`;
+const PasswordInput = styled(HomeInput)`
+  grid-column: 1 / 3;
+  grid-row: 2 / 2;
+  justify-self: right;
+  padding-right: 50px;
+  margin-bottom: 150px;
+`;
 
 function Home(props) {
   const [email, setEmail] = React.useState('');
   const [emailCheck, setEmailCheck] = React.useState(true);
   const [password, setPassword] = React.useState('');
-  const [buttonClassName, setButtonClassName] = React.useState(
-    'register-form__button'
-  );
+  const [backgroundButton, setBackgroundButton] = React.useState('#c1c1c1');
   const [disabledButton, setDisabledButton] = React.useState(true);
 
   const checkEmail = event => {
@@ -33,10 +53,10 @@ function Home(props) {
       emailCheck ||
       userPassword.trim().length < 4
     ) {
-      setButtonClassName('register-form__button');
+      setBackgroundButton('#c1c1c1');
       setDisabledButton(true);
     } else {
-      setButtonClassName('register-form__button-active');
+      setBackgroundButton('#ff5c07');
       setDisabledButton(false);
     }
   }
@@ -46,15 +66,14 @@ function Home(props) {
     sessionStorage.setItem('email', email);
     sessionStorage.setItem('password', password);
   }
+
   return (
     <>
-      <h1 className="main__h1 main__h1__b">
-        Jeder Fisch braucht seinen Schwarm
-      </h1>
-      <form className="register-form" onSubmit={handleSubmit}>
-        <Input
-          className="register-form__email"
+      <Headline>Jeder Fisch braucht seinen Schwarm</Headline>
+      <StartForm onSubmit={handleSubmit}>
+        <EmailInput
           type="email"
+          autoFocus
           required
           value={email}
           placeholder="Email"
@@ -62,8 +81,7 @@ function Home(props) {
             checkEmail(event);
           }}
         />
-        <Input
-          className="register-form__password"
+        <PasswordInput
           type="password"
           required
           value={password}
@@ -72,10 +90,10 @@ function Home(props) {
             checkPassword(event);
           }}
         />
-        <Button className={buttonClassName} disabled={disabledButton}>
-          Let's Go Fishing!
-        </Button>
-      </form>
+        <SubmitButton bg={backgroundButton} disabled={disabledButton}>
+          {props.showLogin ? `Let's Go Fishing!` : `Login`}
+        </SubmitButton>
+      </StartForm>
     </>
   );
 }
