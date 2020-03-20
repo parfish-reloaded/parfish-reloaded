@@ -36,7 +36,7 @@ function SubmitButton(props) {
     setBgColor(props.isDisabled ? disabled : active);
   }, [props.isDisabled]);
   return (
-    <Button disabled={props?.isDisabled} bg={bgColor}>
+    <Button disabled={props.isDisabled} bg={bgColor}>
       {props.children}
     </Button>
   );
