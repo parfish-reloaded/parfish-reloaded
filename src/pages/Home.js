@@ -80,6 +80,7 @@ function Home(props) {
       );
       if (await loginUser) {
         sessionStorage.setItem('loginUserId', await loginUser[0].id);
+        history.push(`/profile/${await loginUser[0].id}`);
       }
     }
   }
