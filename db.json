@@ -1,25 +1,31 @@
 {
   "users": [
     {
-      "nickname": "FLori73",
+      "nickname": "Flori",
       "yearOfBirth": "1999",
       "sex": "gerne",
       "distance": "bis zum Mond",
-      "id": 1
+      "id": 1,
+      "email": "flori@flori.de",
+      "password": "geheim"
     },
     {
-      "nickname": "Uwinator3000",
+      "nickname": "Uwe",
       "yearOfBirth": "1991",
       "sex": "m",
       "distance": "<------------------------>",
-      "id": 2
+      "id": 2,
+      "email": "uwe@uwe.de",
+      "password": "supergeheim"
     },
     {
-      "nickname": "Test",
+      "nickname": "Susanne",
       "yearOfBirth": "123",
       "sex": "divers",
       "distance": "lang",
-      "id": 3
+      "id": 3,
+      "email": "susanne@susanne.de",
+      "password": "geheim"
     },
     {
       "password": "dfadf",

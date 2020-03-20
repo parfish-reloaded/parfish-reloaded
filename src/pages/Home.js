@@ -4,6 +4,7 @@ import SubmitButton from '../components/SubmitButton';
 import Headline from '../components/Headline';
 import HomeInput from '../components/HomeInput';
 import styled from '@emotion/styled';
+import { getUsers } from '../api/users';
 
 const StartForm = styled.form`
   display: grid;
@@ -64,11 +65,21 @@ function Home(props) {
 
   const history = useHistory();
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    sessionStorage.setItem('email', email);
-    sessionStorage.setItem('password', password);
-    history.push('/signin');
+    if (props.showLogin) {
+      sessionStorage.setItem('email', email);
+      sessionStorage.setItem('password', password);
+      history.push('/signin');
+    } else {
+      const users = await getUsers();
+      const loginUser = await users.filter(
+        user => user.email === email && user.password === password
+      );
+      if (await loginUser) {
+        sessionStorage.setItem('loginUserId', await loginUser[0].id);
+      }
+    }
   }
 
   return (
@@ -77,6 +88,7 @@ function Home(props) {
       <StartForm onSubmit={handleSubmit}>
         <EmailInput
           type="email"
+          name="email"
           autoFocus
           required
           value={email}
@@ -87,6 +99,7 @@ function Home(props) {
         />
         <PasswordInput
           type="password"
+          name="password"
           required
           value={password}
           placeholder="Passwort"
