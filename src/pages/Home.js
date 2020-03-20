@@ -69,7 +69,9 @@ function Home(props) {
 
   async function handleSubmit(event) {
     event.preventDefault();
+
     if (props.showLogin) {
+      setDisabledButton(true);
       sessionStorage.setItem('email', email);
       sessionStorage.setItem('password', password);
       history.push('/signin');
