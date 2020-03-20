@@ -9,15 +9,22 @@ const USERS_API_URL =
 function Profile() {
   const { userId } = useParams();
   const [user, setUser] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
     async function getUser() {
-      const response = await fetch(`${USERS_API_URL}/${userId}`);
+      const response = await fetch(`${USERS_API_URL}${userId}`);
       const user = await response.json();
+      console.log(user);
       setUser(user);
+      setIsLoading(false);
     }
     getUser();
   }, [userId]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
