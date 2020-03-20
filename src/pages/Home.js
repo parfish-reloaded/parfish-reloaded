@@ -27,16 +27,16 @@ const PasswordInput = styled(HomeInput)`
   margin-bottom: 150px;
 `;
 
+const HomeSection = styled.section`
+  margin: 100px auto;
+  max-width: 450px;
+`;
+
 function Home(props) {
   const [email, setEmail] = React.useState('');
   const [emailCheck, setEmailCheck] = React.useState(true);
   const [password, setPassword] = React.useState('');
   const [disabledButton, setDisabledButton] = React.useState(true);
-
-  const HomeSection = styled.section`
-    margin: 100px auto;
-    max-width: 450px;
-  `;
 
   const checkEmail = event => {
     setEmail(event.target.value);
@@ -91,7 +91,6 @@ function Home(props) {
         <StartForm onSubmit={handleSubmit}>
           <EmailInput
             type="email"
-            autoFocus
             required
             value={email}
             placeholder="Email"
