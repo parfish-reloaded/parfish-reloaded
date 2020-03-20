@@ -31,8 +31,12 @@ function Home(props) {
   const [email, setEmail] = React.useState('');
   const [emailCheck, setEmailCheck] = React.useState(true);
   const [password, setPassword] = React.useState('');
-  const [backgroundButton, setBackgroundButton] = React.useState('#c1c1c1');
   const [disabledButton, setDisabledButton] = React.useState(true);
+
+  const HomeSection = styled.section`
+    margin: 100px auto;
+    max-width: 450px;
+  `;
 
   const checkEmail = event => {
     setEmail(event.target.value);
@@ -55,10 +59,8 @@ function Home(props) {
       emailCheck ||
       userPassword.trim().length < 4
     ) {
-      setBackgroundButton('#c1c1c1');
       setDisabledButton(true);
     } else {
-      setBackgroundButton('#ff5c07');
       setDisabledButton(false);
     }
   }
@@ -84,33 +86,33 @@ function Home(props) {
 
   return (
     <>
-      <Headline>Jeder Fisch braucht seinen Schwarm</Headline>
-      <StartForm onSubmit={handleSubmit}>
-        <EmailInput
-          type="email"
-          name="email"
-          autoFocus
-          required
-          value={email}
-          placeholder="Email"
-          onChange={event => {
-            checkEmail(event);
-          }}
-        />
-        <PasswordInput
-          type="password"
-          name="password"
-          required
-          value={password}
-          placeholder="Passwort"
-          onChange={event => {
-            checkPassword(event);
-          }}
-        />
-        <SubmitButton bg={backgroundButton} disabled={disabledButton}>
-          {props.showLogin ? `Let's Go Fishing!` : `Login`}
-        </SubmitButton>
-      </StartForm>
+      <HomeSection>
+        <Headline>Jeder Fisch braucht seinen Schwarm</Headline>
+        <StartForm onSubmit={handleSubmit}>
+          <EmailInput
+            type="email"
+            autoFocus
+            required
+            value={email}
+            placeholder="Email"
+            onChange={event => {
+              checkEmail(event);
+            }}
+          />
+          <PasswordInput
+            type="password"
+            required
+            value={password}
+            placeholder="Passwort"
+            onChange={event => {
+              checkPassword(event);
+            }}
+          />
+          <SubmitButton disabled={disabledButton}>
+            {props.showLogin ? `Let's Go Fishing!` : `Login`}
+          </SubmitButton>
+        </StartForm>
+      </HomeSection>
     </>
   );
 }

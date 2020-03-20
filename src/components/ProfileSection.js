@@ -6,15 +6,13 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   margin: 100px auto;
-  width: 85%;
-  height: 260px;
 `;
 
 const Img = styled.img`
-  height: 250px;
   margin-left: 15px;
   border: solid rgba(148, 30, 0) 4px;
   border-radius: 7px;
+  max-height: 260px;
 `;
 
 function ProfileImg(props) {

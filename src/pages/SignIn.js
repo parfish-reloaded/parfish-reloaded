@@ -15,7 +15,7 @@ const InputContainer = styled.div`
   align-items: flex-start;
   width: 85%;
   max-width: 400px;
-  & label:nth-child(2n + 1) {
+  & label:nth-of-type(2n + 1) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
