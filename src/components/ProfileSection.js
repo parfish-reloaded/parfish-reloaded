@@ -60,15 +60,13 @@ function ProfileSection(props) {
       </ImgWrapper>
       <MainDates>
         <MainDatesDescription>Profilname</MainDatesDescription>
-        <ProfileInput>{props.user?.nickname}</ProfileInput>{' '}
+        <ProfileInput>{props.user.nickname}</ProfileInput>{' '}
         <MainDatesDescription>Alter</MainDatesDescription>
-        <ProfileInput>
-          {currentYear - props.user?.yearOfBirth}
-        </ProfileInput>{' '}
+        <ProfileInput>{currentYear - props.user.yearOfBirth}</ProfileInput>{' '}
         <MainDatesDescription>Geschlecht</MainDatesDescription>
-        <ProfileInput>{props.user?.sex}</ProfileInput>{' '}
+        <ProfileInput>{props.user.sex}</ProfileInput>{' '}
         <MainDatesDescription>Angellänge</MainDatesDescription>
-        <ProfileInput>{props.user?.distance}</ProfileInput>
+        <ProfileInput>{props.user.distance}</ProfileInput>
       </MainDates>
     </Section>
   );

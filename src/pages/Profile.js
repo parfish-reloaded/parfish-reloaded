@@ -19,6 +19,10 @@ function Profile() {
     getUser();
   }, [userId]);
 
+  if (!user) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <ProfileSection user={user} />
