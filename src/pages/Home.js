@@ -108,7 +108,7 @@ function Home(props) {
               checkPassword(event);
             }}
           />
-          <SubmitButton disabled={disabledButton}>
+          <SubmitButton isDisabled={disabledButton}>
             {props.showLogin ? `Let's Go Fishing!` : `Login`}
           </SubmitButton>
         </StartForm>
