@@ -29,7 +29,7 @@ const Button = styled.button`
 `;
 
 function SubmitButton(props) {
-  const [bgColor, setBgColor] = React.useState();
+  const [bgColor, setBgColor] = React.useState(null);
   React.useEffect(() => {
     const disabled = '#c1c1c1';
     const active = '#ff5c07';
