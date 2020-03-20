@@ -17,6 +17,7 @@ const ParfishHeaderNav = styled.nav`
   display: flex;
   margin: 0 auto;
   max-width: 960px;
+  justify-content: space-between;
 `;
 
 function LoginButtonOrMenu(props) {
