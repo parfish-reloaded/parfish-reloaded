@@ -10,6 +10,7 @@ const HomeInput = styled.input`
   box-sizing: border-box;
   background-color: rgba(255, 92, 7, 0.8);
   color: #f0f0f0;
+  outline: none;
   &:focus {
     background-color: #ff5c07;
     color: #f0f0f0;
