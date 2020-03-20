@@ -1,13 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import SubmitButton from '../components/SubmitButton';
 import Headline from '../components/Headline';
 import HomeInput from '../components/HomeInput';
 import styled from '@emotion/styled';
-
-const HomeSection = styled.section`
-  margin: 100px auto;
-  max-width: 450px;
-`;
+import { getUsers } from '../api/users';
 
 const StartForm = styled.form`
   display: grid;
@@ -66,41 +63,54 @@ function Home(props) {
     }
   }
 
-  function handleSubmit(event) {
+  const history = useHistory();
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    sessionStorage.setItem('email', email);
-    sessionStorage.setItem('password', password);
+    if (props.showLogin) {
+      sessionStorage.setItem('email', email);
+      sessionStorage.setItem('password', password);
+      history.push('/signin');
+    } else {
+      const users = await getUsers();
+      const loginUser = await users.filter(
+        user => user.email === email && user.password === password
+      );
+      if (await loginUser) {
+        sessionStorage.setItem('loginUserId', await loginUser[0].id);
+      }
+    }
   }
 
   return (
     <>
-      <HomeSection>
-        <Headline>Jeder Fisch braucht seinen Schwarm</Headline>
-        <StartForm onSubmit={handleSubmit}>
-          <EmailInput
-            type="email"
-            autoFocus
-            required
-            value={email}
-            placeholder="Email"
-            onChange={event => {
-              checkEmail(event);
-            }}
-          />
-          <PasswordInput
-            type="password"
-            required
-            value={password}
-            placeholder="Passwort"
-            onChange={event => {
-              checkPassword(event);
-            }}
-          />
-          <SubmitButton bg={backgroundButton} disabled={disabledButton}>
-            {props.showLogin ? `Let's Go Fishing!` : `Login`}
-          </SubmitButton>
-        </StartForm>
-      </HomeSection>
+      <Headline>Jeder Fisch braucht seinen Schwarm</Headline>
+      <StartForm onSubmit={handleSubmit}>
+        <EmailInput
+          type="email"
+          name="email"
+          autoFocus
+          required
+          value={email}
+          placeholder="Email"
+          onChange={event => {
+            checkEmail(event);
+          }}
+        />
+        <PasswordInput
+          type="password"
+          name="password"
+          required
+          value={password}
+          placeholder="Passwort"
+          onChange={event => {
+            checkPassword(event);
+          }}
+        />
+        <SubmitButton bg={backgroundButton} disabled={disabledButton}>
+          {props.showLogin ? `Let's Go Fishing!` : `Login`}
+        </SubmitButton>
+      </StartForm>
     </>
   );
 }

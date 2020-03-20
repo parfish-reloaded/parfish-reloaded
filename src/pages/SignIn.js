@@ -7,6 +7,7 @@ import FileInput from '../components/FileInput';
 import FileFigure from '../components/FileFigure';
 import FileLabel from '../components/FileLabel';
 import styled from '@emotion/styled';
+import { useHistory } from 'react-router';
 
 const InputContainer = styled.div`
   display: flex;
@@ -28,10 +29,14 @@ function SignIn() {
   const [sex, setSex] = React.useState('');
   const [distance, setDistance] = React.useState('');
 
+  const history = useHistory();
+
   async function handleSubmit(event) {
     event.preventDefault();
 
     const users = {
+      password: sessionStorage.getItem('password'),
+      email: sessionStorage.getItem('email'),
       nickname: nickname,
       yearOfBirth: yearOfBirth,
       sex: sex,
@@ -50,12 +55,7 @@ function SignIn() {
       }
     );
     const createdUser = await response.json();
-    alert(`Created poll with the id ${createdUser.id}`);
-
-    console.log(nickname);
-    console.log(yearOfBirth);
-    console.log(sex);
-    console.log(distance);
+    history.push('/profile/' + createdUser.id);
   }
 
   return (
