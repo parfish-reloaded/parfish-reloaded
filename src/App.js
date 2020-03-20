@@ -9,7 +9,7 @@ import Profile from './pages/Profile';
 import Swarm from './pages/Swarm';
 
 function App() {
-  const [showLogin, setShowLogin] = React.useState(false);
+  const [showLogin, setShowLogin] = React.useState(true);
   return (
     <>
       <Router>

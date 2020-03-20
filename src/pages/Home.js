@@ -61,7 +61,9 @@ function Home(props) {
       setDisabledButton(false);
     }
   }
-  let history = useHistory();
+
+  const history = useHistory();
+
   function handleSubmit(event) {
     event.preventDefault();
     sessionStorage.setItem('email', email);
