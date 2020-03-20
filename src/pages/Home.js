@@ -29,7 +29,6 @@ function Home(props) {
   const [email, setEmail] = React.useState('');
   const [emailCheck, setEmailCheck] = React.useState(true);
   const [password, setPassword] = React.useState('');
-  const [backgroundButton, setBackgroundButton] = React.useState('#c1c1c1');
   const [disabledButton, setDisabledButton] = React.useState(true);
 
   const checkEmail = event => {
@@ -53,10 +52,8 @@ function Home(props) {
       emailCheck ||
       userPassword.trim().length < 4
     ) {
-      setBackgroundButton('#c1c1c1');
       setDisabledButton(true);
     } else {
-      setBackgroundButton('#ff5c07');
       setDisabledButton(false);
     }
   }
@@ -90,7 +87,7 @@ function Home(props) {
             checkPassword(event);
           }}
         />
-        <SubmitButton bg={backgroundButton} disabled={disabledButton}>
+        <SubmitButton isDisabled={disabledButton}>
           {props.showLogin ? `Let's Go Fishing!` : `Login`}
         </SubmitButton>
       </StartForm>

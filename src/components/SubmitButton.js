@@ -1,11 +1,12 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
-const SubmitButton = styled.button`
+const Button = styled.button`
   grid-column: 1 / 3;
   grid-row: 3 / 3;
   justify-self: right;
   width: 240px;
-  background-color: ${props => props.bg};
+  background-color: ${props => props?.bg};
   border: none;
   border-radius: 0.5rem;
   color: #f0f0f0;
@@ -26,5 +27,19 @@ const SubmitButton = styled.button`
     background-color: #ff3400;
   }
 `;
+
+function SubmitButton(props) {
+  const [bgColor, setBgColor] = React.useState();
+  React.useEffect(() => {
+    const disabled = '#c1c1c1';
+    const active = '#ff5c07';
+    setBgColor(props.isDisabled ? disabled : active);
+  }, [props.isDisabled]);
+  return (
+    <Button disabled={props?.isDisabled} bg={bgColor}>
+      {props.children}
+    </Button>
+  );
+}
 
 export default SubmitButton;
