@@ -28,7 +28,7 @@ function SignIn() {
   const [nickname, setNickname] = React.useState('');
   const [yearOfBirth, setYearOfBirth] = React.useState('');
   const [sex, setSex] = React.useState('');
-  // const [distance, setDistance] = React.useState('');
+  const [distance, setDistance] = React.useState(120);
 
   const history = useHistory();
 
@@ -40,8 +40,8 @@ function SignIn() {
       email: sessionStorage.getItem('email'),
       nickname: nickname,
       yearOfBirth: yearOfBirth,
-      sex: sex
-      // distance: distance
+      sex: sex,
+      distance: distance
     };
 
     const response = await fetch(
@@ -95,7 +95,16 @@ function SignIn() {
               setSex(event.target.value);
             }}
           />
-          <DistanceSlider />
+          <DistanceSlider
+            type="range"
+            min={0}
+            max={200}
+            className="slider"
+            value={distance}
+            onChange={event => {
+              setDistance(event.target.value);
+            }}
+          />
         </InputContainer>
         <SubmitButton>CAST THE FISHING ROD!</SubmitButton>
       </Form>

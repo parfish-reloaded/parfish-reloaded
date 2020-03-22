@@ -60,7 +60,7 @@ function ProfileSection(props) {
         <MainDatesDescription>Geschlecht</MainDatesDescription>
         <ProfileInput>{props.user?.sex}</ProfileInput>{' '}
         <MainDatesDescription>Angellänge</MainDatesDescription>
-        <ProfileInput>{props.user?.distance}</ProfileInput>
+        <ProfileInput>{props.user?.distance} km</ProfileInput>
       </MainDates>
     </Section>
   );
