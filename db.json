@@ -4,7 +4,7 @@
       "nickname": "Flori",
       "yearOfBirth": "1999",
       "sex": "gerne",
-      "distance": "bis zum Mond",
+      "distance": "13",
       "id": 1,
       "email": "flori@flori.de",
       "password": "geheim"
@@ -13,7 +13,7 @@
       "nickname": "Uwe",
       "yearOfBirth": "1991",
       "sex": "m",
-      "distance": "<------------------------>",
+      "distance": "199",
       "id": 2,
       "email": "uwe@uwe.de",
       "password": "supergeheim"
@@ -22,7 +22,7 @@
       "nickname": "Susanne",
       "yearOfBirth": "123",
       "sex": "divers",
-      "distance": "lang",
+      "distance": "92",
       "id": 3,
       "email": "susanne@susanne.de",
       "password": "geheim"
@@ -33,7 +33,7 @@
       "nickname": "Uwe",
       "yearOfBirth": "1492",
       "sex": "weder noch",
-      "distance": "300km",
+      "distance": "250",
       "id": 4
     },
     {
@@ -42,7 +42,7 @@
       "nickname": "kingOfTheKings",
       "yearOfBirth": "2002",
       "sex": "keine Ausprägung",
-      "distance": "Universum",
+      "distance": "134",
       "id": 5
     },
     {
@@ -87,7 +87,7 @@
       "nickname": "minister",
       "yearOfBirth": "1992",
       "sex": "mach ich jeden Tag",
-      "distance": "2.5",
+      "distance": "25",
       "id": 10
     },
     {
@@ -188,6 +188,15 @@
       "sex": "ja",
       "distance": "j34",
       "id": 21
+    },
+    {
+      "password": null,
+      "email": null,
+      "nickname": "FishermansFriend",
+      "yearOfBirth": "1990",
+      "sex": "m",
+      "distance": "165",
+      "id": 22
     }
   ]
 }
