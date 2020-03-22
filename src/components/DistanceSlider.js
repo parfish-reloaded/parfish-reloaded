@@ -100,27 +100,14 @@ const SliderDescription = styled.p`
   margin: 0px auto;
 `;
 
-export default class DistanceSlider extends React.Component {
-  state = {
-    value: 120
-  };
-  handleOnChange = event => this.setState({ value: event.target.value });
-
-  render() {
-    return (
-      <SliderContainer>
-        <SliderDescription>
-          Deine max. Angellänge: {this.state.value} km
-        </SliderDescription>
-        <input
-          type="range"
-          min={0}
-          max={200}
-          value={this.state.value}
-          className="slider"
-          onChange={this.handleOnChange}
-        />
-      </SliderContainer>
-    );
-  }
+function DistanceSlider(props) {
+  return (
+    <SliderContainer>
+      <SliderDescription>
+        Deine max. Angellänge: {props.value} km
+      </SliderDescription>
+      <input type="range" min={0} max={200} className="slider" {...props} />
+    </SliderContainer>
+  );
 }
+export default DistanceSlider;
