@@ -64,7 +64,7 @@ const SliderContainer = styled.div`
   }
 
   input[type='range']:focus::-webkit-slider-runnable-track {
-    background: #367ebd;
+    background: #ff5c07;
   }
 
   input[type='range']::-moz-range-track {
