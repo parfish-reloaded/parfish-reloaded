@@ -8,6 +8,7 @@ import FileFigure from '../components/FileFigure';
 import FileLabel from '../components/FileLabel';
 import styled from '@emotion/styled';
 import { useHistory } from 'react-router';
+import DistanceSlider from '../components/DistanceSlider';
 
 const InputContainer = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ function SignIn() {
   const [nickname, setNickname] = React.useState('');
   const [yearOfBirth, setYearOfBirth] = React.useState('');
   const [sex, setSex] = React.useState('');
-  const [distance, setDistance] = React.useState('');
+  // const [distance, setDistance] = React.useState('');
 
   const history = useHistory();
 
@@ -39,8 +40,8 @@ function SignIn() {
       email: sessionStorage.getItem('email'),
       nickname: nickname,
       yearOfBirth: yearOfBirth,
-      sex: sex,
-      distance: distance
+      sex: sex
+      // distance: distance
     };
 
     const response = await fetch(
@@ -94,14 +95,7 @@ function SignIn() {
               setSex(event.target.value);
             }}
           />
-
-          <Input
-            placeholder="Wie lang ist deine Angel?"
-            value={distance}
-            onChange={event => {
-              setDistance(event.target.value);
-            }}
-          />
+          <DistanceSlider />
         </InputContainer>
         <SubmitButton>CAST THE FISHING ROD!</SubmitButton>
       </Form>
