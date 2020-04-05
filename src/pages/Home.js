@@ -69,18 +69,23 @@ function Home(props) {
 
   async function handleSubmit(event) {
     event.preventDefault();
+
     if (props.showLogin) {
+      setDisabledButton(true);
       sessionStorage.setItem('email', email);
       sessionStorage.setItem('password', password);
       history.push('/signin');
     } else {
+      setDisabledButton(true);
       const users = await getUsers();
       const loginUser = await users.filter(
         user => user.email === email && user.password === password
       );
       if (await loginUser) {
-        sessionStorage.setItem('loginUserId', await loginUser[0].id);
-        history.push(`/profile/${await loginUser[0].id}`);
+        setDisabledButton(true);
+        const userId = await loginUser[0].id;
+        sessionStorage.setItem('loginUserId', await userId);
+        history.push(`/profile/${await userId}`);
       }
     }
   }
