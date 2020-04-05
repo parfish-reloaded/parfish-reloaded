@@ -7,6 +7,12 @@ import FooterFour from '../assets/footer_4.png';
 import { Link } from 'react-router-dom';
 
 function Footer() {
+  const [loginUserId, setLoginUserId] = React.useState(null);
+  React.useEffect(() => {
+    setLoginUserId(sessionStorage.getItem('loginUserId'));
+    console.log(loginUserId);
+  }, [loginUserId]);
+
   return (
     <>
       <footer>
@@ -29,8 +35,8 @@ function Footer() {
               />
             </button>
           </Link>
-          <Link to="/profile/1">
-            <button className="footer__nav__button" href="/profile/1">
+          <Link to={`/profile/${loginUserId}`}>
+            <button className="footer__nav__button">
               <img
                 className="footer__nav__button__img"
                 src={FooterThree}
