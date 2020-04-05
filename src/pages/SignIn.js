@@ -96,10 +96,6 @@ function SignIn() {
             }}
           />
           <DistanceSlider
-            type="range"
-            min={0}
-            max={200}
-            className="slider"
             value={distance}
             onChange={event => {
               setDistance(event.target.value);
