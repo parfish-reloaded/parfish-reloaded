@@ -197,6 +197,15 @@
       "sex": "m",
       "distance": "165",
       "id": 22
+    },
+    {
+      "password": null,
+      "email": null,
+      "nickname": "TestPerson",
+      "yearOfBirth": "1990",
+      "sex": "männlich",
+      "distance": "99",
+      "id": 23
     }
   ]
 }
