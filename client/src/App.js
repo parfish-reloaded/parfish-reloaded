@@ -8,10 +8,25 @@ import SignIn from './pages/SignIn';
 import Profile from './pages/Profile';
 import Swarm from './pages/Swarm';
 
+const [test, setTest] = React.useState(null);
+
+React.useEffect(() => {
+  fetch('/api/test')
+    .then(response => response.json())
+    .then(result => {
+      setTest(result);
+    });
+}, []);
+
 function App() {
   const [showLogin, setShowLogin] = React.useState(true);
   return (
     <>
+      {test && (
+        <div>
+          {test.title}: {test.message}
+        </div>
+      )}
       <Router>
         <Header onLoginButtonClick={() => setShowLogin(!showLogin)} />
         <main>
